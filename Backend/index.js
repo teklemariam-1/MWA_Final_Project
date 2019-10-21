@@ -14,12 +14,12 @@ app.post('/register', (req, res)=>{
     const user = new User(userData);
 
     console.log(userData)
-    // user.save((err, result)=>{
-    //     if(err)
-    //          console.log('Saving User Error')
-    //     res.status(200);
-    // })
-    res.status(200).send('Congrats customer '+user);
+    user.save((err, result)=>{
+        if(err)
+             console.log('Saving User Error')
+        res.status(200);
+    })
+//    res.status(200).send('Congrats customer '+User.find({}, '-_id, -pwd, email').name);
 })
 
 mongoose.connect('mongodb://localhost:27017/fadios', {useNewUrlParser:true}, (err)=>{
