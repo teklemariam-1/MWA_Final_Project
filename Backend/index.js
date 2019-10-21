@@ -19,7 +19,7 @@ app.post('/register', (req, res)=>{
              console.log('Saving User Error')
         res.status(200);
     })
-//    res.status(200).send('Congrats customer '+User.find({}, '-_id, -pwd, email').name);
+
 })
 
 mongoose.connect('mongodb://localhost:27017/fadios', {useNewUrlParser:true}, (err)=>{
