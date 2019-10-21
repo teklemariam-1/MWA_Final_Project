@@ -106,6 +106,18 @@ const update = (req, res, next) => {
     });
 };
 
+const deleteProduct = (req, res, next) => {
+  Products.findByIdAndRemove(req.params.id)
+    .then(product => {
+      if (!product) error404(res, "Product not found with id " + req.params.id);
+      response(res, "Product deleted successfully!");
+    })
+    .catch(err => {
+      NotFoundInCatch(res, err, `Product not found with id ${err.value}`);
+      error500(res, `Could not delete product with id ${err.value}`);
+    });
+};
+
 module.exports = {
   create,
   findAll,
