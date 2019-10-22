@@ -53,7 +53,9 @@ export class ListComponent implements OnInit {
       {column: 'ProductName', title: 'Name' , sort: true},
       {column: 'ProductShotCode', title: 'Shot Code'},
       {column: 'Price', title: 'Price'},
-      
+      {column: 'Quantity', title: 'Quantity', sort: true},
+      {column: 'createdAt', title: 'Created Date', sort: true, template: this.CreatedAt},
+      {column: 's', title: '', template: this.Action}
     ];
 
     this.subs.push(
