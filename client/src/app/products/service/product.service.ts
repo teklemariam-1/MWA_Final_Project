@@ -61,9 +61,7 @@ export class ProductService {
     return this.http.post('products/create', data).toPromise();
   }
 
-  deleteProduct(id) {
-    return this.http.delete('products/' + id).toPromise();
-  }
+  
 
   formateProduct(data, cartList) {
     const products = cloneDeep(data);
