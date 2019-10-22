@@ -7,7 +7,10 @@ const dictionaryRoute = require('./api/routes/dictionary');
 const cartRoute = require('./api/routes/carts');
 const url = require('url');
 
+const bcrypt = require('bcrypt-nodejs');
+const jwt = require('jwt-simple');
 
+const User = require('./models/Users.js')
 
  mongoose.Promise = Promise;
 
